@@ -21,7 +21,7 @@ from django.conf import settings
 
 
 auth_api_urls = [
-    path('', include('rest_framework_social_oauth2')),
+    path('', include('rest_framework_social_oauth2.urls')),
 ]
 if settings.DEBUG:
     auth_api_urls.append(path(r'verify/', include('rest_framework.urls')))

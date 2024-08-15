@@ -85,15 +85,15 @@ REST_FRAMEWORK ={
         'rest_framework.authentication.SessionAuthentication',
 
 
-        'oauth2_provider.contrib.rest_framework.Oauth2Authentication',
-        'rest_framework_socail_oauth2.authentication.SocialAuthentication'
+        'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
+        'rest_framework_social_oauth2.authentication.SocialAuthentication'
     ]
 
 }
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.backends.ModelBackends',
-    'rest_framework_social_oauth2.DjangoOauth2'
+    'rest_framework_social_oauth2.DjangoOAuth2'
 ]
 
 
