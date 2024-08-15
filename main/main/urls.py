@@ -20,9 +20,11 @@ from users import router as user_api_router
 from django.conf import settings
 
 
-auth_api_urls = []
+auth_api_urls = [
+    path('', include('rest_framework_social_oauth2')),
+]
 if settings.DEBUG:
-    auth_api_urls.append(r'verify/', include('rest_framework.urls'))
+    auth_api_urls.append(path(r'verify/', include('rest_framework.urls')))
 
 api_url_patterns = [
     path(r'auth/', include(auth_api_urls)),
