@@ -92,8 +92,8 @@ REST_FRAMEWORK ={
 }
 
 AUTHENTICATION_BACKENDS = [
-    'django.contrib.backends.ModelBackends',
-    'rest_framework_social_oauth2.DjangoOAuth2'
+    'django.contrib.auth.backends.ModelBackend',
+    'rest_framework_social_oauth2.backends.DjangoOAuth2'
 ]
 
 
