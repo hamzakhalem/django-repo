@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'rest_framework_social_oauth2',
     'users'
 ] 
-
+DRFSO2_PROPRIETARY_BACKEND_NAME = 'Django'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

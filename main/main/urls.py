@@ -30,6 +30,7 @@ api_url_patterns = [
     path(r'auth/', include(auth_api_urls)),
     path(r'accounts/', include(user_api_router.router.urls) )
 ]
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(api_url_patterns))
