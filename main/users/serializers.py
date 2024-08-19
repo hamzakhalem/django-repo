@@ -9,6 +9,21 @@ class UserSerializers(serializers.ModelSerializer):
     username = serializers.CharField(read_only=True)
     old_password = serializers.CharField(write_only=True, required= False)
 
+    def validate(self, data):
+        reqmeth = self.context['request'].method
+        password = data.get('password', None)
+
+        if reqmeth == 'POST':
+            if password == None:
+                raise serializers.ValidationError({"info":"Please Provide Password"})
+        elif reqmeth == 'PUT' or reqmeth == 'PATCH':   
+            old_password = data.get('old_password', None)
+            if password == None:
+                raise serializers.ValidationError({"info":"Please Provide Password"})
+            if password != None and old_password == None:
+                raise serializers.ValidationError({"info":"Please Provide Old Password"})
+        return data
+
     def create(self, validated_data):
         password = validated_data.pop['passowrd']
         user = User.objects.create(**validated_data)
