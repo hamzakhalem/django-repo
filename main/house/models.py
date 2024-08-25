@@ -5,7 +5,7 @@ import os
 
 @deconstructible
 class GenerateProfileImagePath(object):
-    
+        
     def __init__(self):
         pass
     def __call__(self, instance, filename):
