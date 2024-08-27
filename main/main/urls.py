@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from users import router as user_api_router
+from house import router as house_api_router
 from django.conf import settings
 
 
@@ -28,7 +29,8 @@ if settings.DEBUG:
 
 api_url_patterns = [
     path(r'auth/', include(auth_api_urls)),
-    path(r'accounts/', include(user_api_router.router.urls) )
+    path(r'accounts/', include(user_api_router.router.urls) ),
+    path(r'house/', include(house_api_router.router.urls) )
 ]
 
 urlpatterns = [
