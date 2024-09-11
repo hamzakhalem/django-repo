@@ -22,7 +22,7 @@ class TaskSerializers(serializers.ModelSerializer):
                  'description', 'status', 'task_lis'  ]
         read_only_fields = ['created_on', 'completed_on', 'created_by', 'completed_by',
                             'status', 'notcompleted_tasks_count']
-
+    
 
 class AttachmentSerializers(serializers.ModelSerializer):
     
