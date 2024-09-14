@@ -23,6 +23,7 @@ class TaskSerializers(serializers.ModelSerializer):
         user_profile = self.context['request'].user.profile
         if value not in user_profile.house.lists.all(): 
             raise serializers.ValidationError("herbech berbech")
+        return value
     
     def create(self, validated_data):
         user_profile = self.context['request'].user.profile
@@ -46,3 +47,11 @@ class AttachmentSerializers(serializers.ModelSerializer):
         model= Task
         fields =['url', 'id', 'data', 'created_on', 'task']
         read_only_fields = ['created_on']
+    
+     def validate(self, attrs):
+        user_profile = self.context['request'].user.profile
+        task = attrs['task']
+        task_list = Task_list.objects.get(tasks__id__exact=task.id )
+        if task_list not in user_profile.house.lists.all(): 
+            raise serializers.ValidationError("herbech berbech")
+        return attrs
