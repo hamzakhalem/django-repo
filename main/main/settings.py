@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'users',
     'house',
     'task',
+    'django-filter'
 ] 
 DRFSO2_PROPRIETARY_BACKEND_NAME = 'Django'
 MIDDLEWARE = [
