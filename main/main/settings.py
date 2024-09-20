@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django-filter'
 ] 
 DRFSO2_PROPRIETARY_BACKEND_NAME = 'Django'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
